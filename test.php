@@ -13,11 +13,16 @@ $letters = array("a","b","c","d");
 foreach($letters as $letter){
     echo $letter;   
 }
-$numbers = [1,2,3,4,5,6];
-foreach($numbers as $number){
-    echo "My number is " . $number ." but my index is " . $number-1;
-}
-for($i = 0; $i < count($numbers); $i++ ){
-    echo "". $numbers[$i] ."";
+$numbers = [3,6,7,5,1];
+
+#bubble sort - if the number is greater than the next, swap them
+for($i = 0; $i < count($numbers); $i++){
+    for($j = 0; $j < count($numbers) - 1; $j++){
+        if($numbers[$j] > $numbers[$j + 1]){
+            $temp = $numbers[$j];
+            $numbers[$j] = $numbers[$j + 1];
+            $numbers[$j + 1] = $temp;
+        }
+    }
 }
 ?>
